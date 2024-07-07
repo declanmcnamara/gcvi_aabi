@@ -1,0 +1,30 @@
+defaults:
+  - override hydra/launcher: joblib
+
+hydra:
+  launcher:
+    n_jobs: 4
+
+seed: 789243
+dir: '/home/declan/current/gcvi_aabi'
+log_dir: './logs'
+
+data:
+  sigma: .5
+  angle_min: 0.
+  angle_max: 360
+
+training:
+  device: 'cpu'
+  epochs: 200000
+  lr: 1e-4
+  grad_clip: 1
+  true_mb_size: 100
+  test_mb_size: 1000
+  favi_mb_size: 16
+  loss: 'favi'
+
+encoder:
+  hidden_dim: 512
+  n_hidden_layer: 1
+  
